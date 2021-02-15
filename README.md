@@ -7,8 +7,6 @@ Design LCD Display Layouts for 20x4 or 16x2 displays connected to Arduino, Raspb
 * Requires Java JDK 8 to run. Ensure to comply to the [Oracle JDK Licence agreement](https://www.oracle.com/downloads/licenses/oracle-javase-license.html).
 * Developed for personal use only.
 
-![lcdcustomcharmaker](https://user-images.githubusercontent.com/47274144/72811224-7de5e700-3c5f-11ea-81ab-df8d4fbfeb9f.png)
-
 ## Functionality
 * Design LCD display layouts for 20x4 (20 columns, 4 rows) or 16x2 displays (16 columns, 2 rows).
 * Save / open the display layout to / from a textfile located in the application folder.
@@ -16,7 +14,7 @@ Design LCD Display Layouts for 20x4 or 16x2 displays connected to Arduino, Raspb
 * Example B4R program included.
 
 ## Dependency
-The following libraries are used which are included in the archive lcddisplaydesigner.zip, folder libraries.
+The following libraries are used which are included in the archive _lcddisplaydesigner.zip_, folder libraries.
 * For B4R programms, the B4R library rLiquidCrystal_I2C 
 * For Arduino C++ sketches, the library LiquidCrystal_I2C
 
