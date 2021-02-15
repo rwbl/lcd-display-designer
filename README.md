@@ -2,6 +2,7 @@
 Design LCD Display Layouts for 20x4 or 16x2 displays connected to Arduino, Raspberry Pi or other.
 
 ![lcd-display-designer-2](https://user-images.githubusercontent.com/47274144/107953436-69c40480-6f9b-11eb-81c7-4330f35213ee.png)
+Screenshot application with generated B4R code and an Arduino UNO with LCD2004 showing the text designed via B4R program.
 
 * Created with [B4J v8.90](https://www.b4x.com/b4j.html) - RAD development tool for cross platform desktop, server and IoT solutions.
 * Requires Java JDK 8 to run. Ensure to comply to the [Oracle JDK Licence agreement](https://www.oracle.com/downloads/licenses/oracle-javase-license.html).
