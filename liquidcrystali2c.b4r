@@ -1,0 +1,83 @@
+﻿Build1=Default,B4RDev
+Group=Default Group
+Library1=rcore
+Library2=rliquidcrystal_i2c
+Library3=rrandomaccessfile
+NumberOfFiles=0
+NumberOfLibraries=3
+NumberOfModules=0
+Version=3.5
+@EndOfDesignText@
+#Region Project Notes
+'B4R HowTo LiquiudCrystal_I2C for DFRobot I2C LCD displays
+'Based on Anywhere Software B4R forum entry: https://www.b4x.com/android/forum/threads/liquidcrystal_i2c.66425/
+'Additional Libraries: rLiquidCrystal_I2C v1.1
+'20210214 rwbl
+#End Region
+
+#Region Wiring
+'Arduino = LCD I2C
+'GND = GND (Black)
+'5v = VCC (Red)
+'SDA = SDA (Blue)
+'SCL = SCL (Green)
+#End Region
+
+#Region Project Attributes
+    #AutoFlushLogs: True
+    #CheckArrayBounds: True
+    #StackBufferSize: 300
+#End Region
+
+Sub Process_Globals
+	Public Serial1 As Serial
+	Private lcd As LiquidCrystal_I2C
+	' LCD Columns & Rows - Default 20x4 display
+	Private lcdColumns As Int = 20
+	Private lcdRows As Int = 4
+	' Special characters with index 0,1...
+	Private CharArrowUp As Byte = 0
+	Private CharArrowDown As Byte = 1
+	Private CharBell As Byte = 2
+End Sub
+
+Private Sub AppStart
+	Serial1.Initialize(115200)
+   	Log("AppStart")
+	'Address, Columns, Rows
+	'Init the LCD: 0x3F=1602,0x27=2004
+	lcd.Initialize(0x27, 20, 4)
+	'lcd.Initialize(0x3F, 16, 2)
+	lcd.Backlight = True
+	lcd.Clear
+	
+	'Define Special Chars
+	lcd.CreateChar(CharArrowUp, Array As Byte (0x00,0x04,0x0E,0x1F,0x04,0x04,0x04,0x00))
+	lcd.CreateChar(CharArrowDown, Array As Byte (0x00,0x04,0x04,0x04,0x1F,0x0E,0x04,0x00))
+	lcd.CreateChar(CharBell, Array As Byte (0x04,0x0E,0x0E,0x0E,0x1F,0x00,0x04,0x00))
+	
+	'Set cursor position and write string
+	lcd.SetCursor(0,0)
+	lcd.Write("Hello World")
+	'Write string direct at column, row
+	lcd.WriteAt(0,3,"B4X is great!")
+	
+	'Write Special Char
+	lcd.WriteCharAt(0,1,CharArrowUp)
+	lcd.WriteCharAt(5,1,CharArrowDown)
+	lcd.WriteCharAt(10,1,CharBell)
+	
+	'Example Write char at position
+	'Fill the display with random char between ascii 48 and 122 (incl)
+	Delay(5000)
+	lcd.Clear
+	Dim bc As ByteConverter
+	Dim c(1) As Byte
+	For row = 0 To lcdRows
+		For col = 0 To lcdColumns
+			c(0) = Rnd(48, 123)
+			lcd.WriteAt(col,row,bc.StringFromBytes(c))
+		Next
+	Next
+
+End Sub
