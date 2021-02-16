@@ -23,20 +23,23 @@ The following libraries are used which are included in the archive _lcddisplayde
 [B4R](https://www.b4x.com/b4r.html) development tool for native Arduino and ESP programs by [Anywhere Software](https://www.b4x.com).
 
 ## Files
-* lcddisplaydesigner.zip contains the application & a B4R example.
+* lcddisplaydesigner.zip - B4J application source.
+* lcddisplaydesigner.jar - Java archive (see install on how to run).
+* rLiquidCrystal_I2C.zip - B4R / C++ library to write to LCD displays LCD2004 or LCD1602.
+* run8.bar, run11.bat - Windows batch file to run the Java archive lcddisplaydesigner.jar.
+* hello_world.lcd - Sample LCD display layout.
 
 ## Install
-Unpack the archive lcddisplaydesigner.zip to a folder of choice.
+Unpack the ZIP archive to a folder of choice.
 
-From the source/Objects folder, run the Java jar **lcddisplaydesigner.jar**
-
-Example Java 8:
+Run the Java jar **lcddisplaydesigner.jar**
+Example running with Java 8:
 ```
 java -jar lcddisplaydesigner.jar
 ```
 
 **Notes:**
-* The full B4J source code is included (folder source).
+* The full B4J source code is included.
 * An example batch file "run8.bat" to run under Windows is included. Ensure to set the path to the JDK8 folder.
 * There is also a "run11.bat" for running with openJDK11 - might require to recompile first with B4J using openJDK11.
 
