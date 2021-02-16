@@ -26,6 +26,7 @@ The following libraries are used which are included in the archive _lcddisplayde
 * lcddisplaydesigner.zip - B4J application source.
 * lcddisplaydesigner.jar - Java archive (see install on how to run).
 * rLiquidCrystal_I2C.zip - B4R / C++ library to write to LCD displays LCD2004 or LCD1602.
+* b4r-liquidcrystali2c-example.zip - B4R Example writing to the LCD Display LCD2004.
 * run8.bar, run11.bat - Windows batch file to run the Java archive lcddisplaydesigner.jar.
 * hello_world.lcd - Sample LCD display layout.
 
